@@ -1,19 +1,24 @@
 '''
-Desafio
-Você recebeu o desafio de ler um valor e criar um programa que coloque o valor lido na primeira posição de um vetor N[10]. Em cada posição subsequente, coloque o dobro do valor da posição anterior. Por exemplo, se o valor lido for 1, os valores do vetor devem ser 1,2,4,8 e assim sucessivamente. Mostre o vetor em seguida.
+Na matemática, um Número Primo é aquele que pode ser dividido somente por 1 (um) e por ele mesmo. Por exemplo, o número 7 é primo, pois pode ser dividido apenas pelo número 1 e pelo número 7.
 
 Entrada
-A entrada contém um valor inteiro (V<=50).
+A entrada contém vários casos de teste. A primeira linha da entrada contém um inteiro N (1 ≤ N ≤ 100), indicando o número de casos de teste da entrada. Cada uma das N linhas seguintes contém um valor inteiro X (1 < X ≤ 107), que pode ser ou não, um número primo.
 
 Saída
-Para cada posição do vetor, escreva "N[i] = X", onde i é a posição do vetor e X é o valor armazenado na posição i. O primeiro número do vetor N (N[0]) irá receber o valor de V.
+Para cada caso de teste de entrada, imprima a mensagem “X eh primo” ou “X nao eh primo”, de acordo com a especificação fornecida.
 '''
 
-N = [0,0,0,0,0,0,0,0,0,0]
-x = int(input())
+n = int(input())
+for i in range(n):
+    num = int(input())
+    sum = 0
 
+    for j in range(1, (num + 1)):
+        if num % j == 0:
+            sum += 1
 
-for i in range(len(N)):
-  N[i] = x
-  x *= 2
-  print('N[{}] = {}'.format(i, N[i]))
+    if sum != (2):
+        print(f'{num} nao eh primo')
+
+    else:
+        print(f'{num} eh primo')
